@@ -1,0 +1,69 @@
+/* 1. Attribute selectors for table rows */
+tr[class="read"] {
+  background-image: linear-gradient(to right, #d4edda, #f8f9fa);
+}
+
+tr[class="to-read"] {
+  background-image: linear-gradient(to right, #fff3cd, #f8f9fa);
+}
+
+tr[class="in-progress"] {
+  background-image: linear-gradient(to right, #cce5ff, #f8f9fa);
+}
+
+/* 2. Display property for all span elements */
+span {
+  display: inline-block;
+}
+
+/* 3. Status spans in to-read rows */
+tr[class="to-read"] span[class="status"] {
+  border: 2px solid #856404;
+  background-image: linear-gradient(to bottom, #fff3cd, #ffeaa7);
+}
+
+/* 4. Status spans in read rows */
+tr[class="read"] span[class="status"] {
+  border: 2px solid #155724;
+  background-image: linear-gradient(to bottom, #d4edda, #c3e6cb);
+}
+
+/* 5. Status spans in in-progress rows */
+tr[class="in-progress"] span[class="status"] {
+  border: 2px solid #004085;
+  background-image: linear-gradient(to bottom, #cce5ff, #b8daff);
+}
+
+/* 6. Status and rate spans dimensions */
+span[class="status"],
+span[class^="rate"] {
+  height: 24px;
+  width: 100px;
+  padding: 4px;
+}
+
+/* 7. Direct children of rate spans */
+span[class^="rate"] > span {
+  border: 1px solid #6c757d;
+  border-radius: 3px;
+  margin: 2px;
+  height: 16px;
+  width: 16px;
+  background-color: #e9ecef;
+}
+
+/* Teste 46-47: Primeiro descendente de spans com a palavra "one" na classe */
+span[class~="one"] > span:first-child {
+  background-image: linear-gradient(to bottom, #ffc107, #e0a800);
+}
+
+/* Teste 48-49: Primeiros dois descendentes de spans com a palavra "two" na classe */
+span[class~="two"] > span:first-child,
+span[class~="two"] > span:nth-child(2) {
+  background-image: linear-gradient(to bottom, #ffc107, #e0a800);
+}
+
+/* Teste 50-51: Todos os spans descendentes de spans com a palavra "three" na classe */
+span[class~="three"] > span {
+  background-image: linear-gradient(to bottom, #ffc107, #e0a800);
+}
